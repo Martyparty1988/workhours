@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docházka a Vyúčtování</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+<header>
+    <h1>Docházka a Vyúčtování</h1>
+    <button id="themeToggle">Přepnout režim</button>
+</header>
+<main>
+    <!-- Obsah formulářů a tabulek zůstává nezměněn -->
+    <div class="form-row">
+        <button id="exportJSON">Exportovat do JSON</button>
+        <button id="exportExcel">Exportovat do Excel</button>
+    </div>
+    <canvas id="earningsChart"></canvas>
+</main>
+<script src="scripts/notifications.js"></script>
+<script src="scripts/export.js"></script>
+<script src="scripts/charts.js"></script>
+<script src="scripts/app.js"></script>
+</body>
+</html>
