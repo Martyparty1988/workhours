@@ -5,53 +5,59 @@ body {
     color: #333;
 }
 header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
     background: #333;
-    color: #fff;
+    color: white;
     padding: 1rem;
     text-align: center;
 }
-button {
-    padding: 0.6rem 1rem;
-    margin: 0.5rem;
-    background-color: #007aff;
-    color: #fff;
+nav {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+nav button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #007aff;
+    color: white;
     border: none;
     border-radius: 4px;
-    font-size: 1rem;
     cursor: pointer;
 }
-button:hover {
-    background-color: #0057c2;
+nav button.active {
+    background: #0057c2;
+}
+main {
+    padding: 1rem;
+}
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
 }
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 1rem;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 table th, table td {
     border: 1px solid #ddd;
     padding: 0.5rem;
     text-align: left;
 }
-.no-data {
-    text-align: center;
-    color: #999;
+.stats {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background-color: #f0f8ff;
+    border: 1px solid #007aff;
+    border-radius: 4px;
 }
-@media (max-width: 600px) {
-    body {
-        font-size: 0.9rem;
-    }
-    header {
-        font-size: 1.2rem;
-    }
-    button {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
-    }
-    table {
-        font-size: 0.8rem;
-    }
+.row-debt {
+    background-color: #ffcccc;
+}
+.row-extra-hours {
+    background-color: #ccffcc;
 }
