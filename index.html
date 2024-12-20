@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Docházka a Vyúčtování</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 <body>
 <header>
@@ -13,27 +14,26 @@
 </header>
 <main>
     <div class="controls">
-        <button id="exportJSON">Exportovat do JSON</button>
-        <button id="exportCSV">Exportovat do CSV</button>
+        <button id="saveScreenshot">Uložit jako screenshot</button>
     </div>
     <h3>Záznamy</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>Zaměstnanec</th>
-                <th>Datum</th>
-                <th>Příchod</th>
-                <th>Odchod</th>
-                <th>Výdělek</th>
-            </tr>
-        </thead>
-        <tbody id="entriesTable">
-            <tr><td colspan="5" class="no-data">Žádné záznamy k zobrazení</td></tr>
-        </tbody>
-    </table>
+    <div id="screenshotTarget">
+        <table>
+            <thead>
+                <tr>
+                    <th>Zaměstnanec</th>
+                    <th>Datum</th>
+                    <th>Příchod</th>
+                    <th>Odchod</th>
+                    <th>Výdělek</th>
+                </tr>
+            </thead>
+            <tbody id="entriesTable">
+                <tr><td colspan="5" class="no-data">Žádné záznamy k zobrazení</td></tr>
+            </tbody>
+        </table>
+    </div>
 </main>
 <script src="scripts/app.js"></script>
-<script src="scripts/notifications.js"></script>
-<script src="scripts/export.js"></script>
 </body>
 </html>
