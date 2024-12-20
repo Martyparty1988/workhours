@@ -5,34 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Docházka a Vyúčtování</title>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 </head>
 <body>
 <header>
     <h1>Docházka a Vyúčtování</h1>
-    <button id="themeToggle">Přepnout režim</button>
+    <nav>
+        <button id="martyTab">Marty</button>
+        <button id="maruTab">Maru</button>
+        <button id="summaryTab">Vyúčtování</button>
+    </nav>
 </header>
 <main>
-    <div class="controls">
-        <button id="saveScreenshot">Uložit jako screenshot</button>
-    </div>
-    <h3>Záznamy</h3>
-    <div id="screenshotTarget">
-        <table>
-            <thead>
-                <tr>
-                    <th>Zaměstnanec</th>
-                    <th>Datum</th>
-                    <th>Příchod</th>
-                    <th>Odchod</th>
-                    <th>Výdělek</th>
-                </tr>
-            </thead>
-            <tbody id="entriesTable">
-                <tr><td colspan="5" class="no-data">Žádné záznamy k zobrazení</td></tr>
-            </tbody>
-        </table>
-    </div>
+    <!-- Marty Tab -->
+    <section id="martySection" class="tab-content active">
+        <h2>Docházka - Marty</h2>
+        <div id="martyStats" class="stats"></div>
+        <div id="martyTableContainer">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Příchod</th>
+                        <th>Odchod</th>
+                        <th>Pauza</th>
+                        <th>Wellness</th>
+                        <th>Více-práce</th>
+                        <th>Prac. doba</th>
+                        <th>Den. výdělek</th>
+                        <th>Na dluh</th>
+                    </tr>
+                </thead>
+                <tbody id="martyTableBody"></tbody>
+            </table>
+            <button id="addMartyRow">Přidat řádek</button>
+        </div>
+    </section>
+
+    <!-- Maru Tab -->
+    <section id="maruSection" class="tab-content">
+        <h2>Docházka - Maru</h2>
+        <div id="maruStats" class="stats"></div>
+        <div id="maruTableContainer">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Příchod</th>
+                        <th>Odchod</th>
+                        <th>Pauza</th>
+                        <th>Wellness</th>
+                        <th>Více-práce</th>
+                        <th>Prac. doba</th>
+                        <th>Den. výdělek</th>
+                        <th>Na dluh</th>
+                    </tr>
+                </thead>
+                <tbody id="maruTableBody"></tbody>
+            </table>
+            <button id="addMaruRow">Přidat řádek</button>
+        </div>
+    </section>
+
+    <!-- Vyúčtování Tab -->
+    <section id="summarySection" class="tab-content">
+        <h2>Vyúčtování</h2>
+        <div id="summaryTableContainer">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Původ</th>
+                        <th>Přijato Kč</th>
+                        <th>Přijato €</th>
+                        <th>Odevzdáno €</th>
+                        <th>Účel</th>
+                        <th>Platby</th>
+                        <th>Výplata</th>
+                    </tr>
+                </thead>
+                <tbody id="summaryTableBody"></tbody>
+            </table>
+            <button id="addSummaryRow">Přidat řádek</button>
+        </div>
+    </section>
 </main>
 <script src="scripts/app.js"></script>
 </body>
