@@ -10,83 +10,100 @@
 <header>
     <h1>Docházka a Vyúčtování</h1>
     <nav>
-        <button id="martyTab">Marty</button>
-        <button id="maruTab">Maru</button>
-        <button id="summaryTab">Vyúčtování</button>
+        <button class="tab-btn active" data-tab="martySection">Marty</button>
+        <button class="tab-btn" data-tab="maruSection">Maru</button>
+        <button class="tab-btn" data-tab="summarySection">Vyúčtování</button>
     </nav>
 </header>
 <main>
     <!-- Marty Tab -->
     <section id="martySection" class="tab-content active">
         <h2>Docházka - Marty</h2>
+        <form id="martyForm">
+            <label for="martyDate">Datum:</label>
+            <input type="date" id="martyDate" required>
+            <label for="martyArrival">Příchod:</label>
+            <input type="time" id="martyArrival" required>
+            <label for="martyDeparture">Odchod:</label>
+            <input type="time" id="martyDeparture" required>
+            <label for="martyPause">Pauza (h):</label>
+            <input type="number" id="martyPause" step="0.5" required>
+            <button type="submit">Přidat záznam</button>
+        </form>
         <div id="martyStats" class="stats"></div>
-        <div id="martyTableContainer">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Datum</th>
-                        <th>Příchod</th>
-                        <th>Odchod</th>
-                        <th>Pauza</th>
-                        <th>Wellness</th>
-                        <th>Více-práce</th>
-                        <th>Prac. doba</th>
-                        <th>Den. výdělek</th>
-                        <th>Na dluh</th>
-                    </tr>
-                </thead>
-                <tbody id="martyTableBody"></tbody>
-            </table>
-            <button id="addMartyRow">Přidat řádek</button>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Příchod</th>
+                    <th>Odchod</th>
+                    <th>Pauza</th>
+                    <th>Prac. doba</th>
+                    <th>Den. výdělek</th>
+                </tr>
+            </thead>
+            <tbody id="martyTableBody"></tbody>
+        </table>
     </section>
 
     <!-- Maru Tab -->
     <section id="maruSection" class="tab-content">
         <h2>Docházka - Maru</h2>
+        <form id="maruForm">
+            <label for="maruDate">Datum:</label>
+            <input type="date" id="maruDate" required>
+            <label for="maruArrival">Příchod:</label>
+            <input type="time" id="maruArrival" required>
+            <label for="maruDeparture">Odchod:</label>
+            <input type="time" id="maruDeparture" required>
+            <label for="maruPause">Pauza (h):</label>
+            <input type="number" id="maruPause" step="0.5" required>
+            <button type="submit">Přidat záznam</button>
+        </form>
         <div id="maruStats" class="stats"></div>
-        <div id="maruTableContainer">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Datum</th>
-                        <th>Příchod</th>
-                        <th>Odchod</th>
-                        <th>Pauza</th>
-                        <th>Wellness</th>
-                        <th>Více-práce</th>
-                        <th>Prac. doba</th>
-                        <th>Den. výdělek</th>
-                        <th>Na dluh</th>
-                    </tr>
-                </thead>
-                <tbody id="maruTableBody"></tbody>
-            </table>
-            <button id="addMaruRow">Přidat řádek</button>
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Datum</th>
+                    <th>Příchod</th>
+                    <th>Odchod</th>
+                    <th>Pauza</th>
+                    <th>Prac. doba</th>
+                    <th>Den. výdělek</th>
+                </tr>
+            </thead>
+            <tbody id="maruTableBody"></tbody>
+        </table>
     </section>
 
     <!-- Vyúčtování Tab -->
     <section id="summarySection" class="tab-content">
         <h2>Vyúčtování</h2>
-        <div id="summaryTableContainer">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Datum</th>
-                        <th>Původ</th>
-                        <th>Přijato Kč</th>
-                        <th>Přijato €</th>
-                        <th>Odevzdáno €</th>
-                        <th>Účel</th>
-                        <th>Platby</th>
-                        <th>Výplata</th>
-                    </tr>
-                </thead>
-                <tbody id="summaryTableBody"></tbody>
-            </table>
-            <button id="addSummaryRow">Přidat řádek</button>
-        </div>
+        <form id="summaryForm">
+            <label for="receivedCZK">Přijato Kč:</label>
+            <input type="number" id="receivedCZK" required>
+            <label for="czkSource">Původ (např. výplata, dary):</label>
+            <input type="text" id="czkSource" required>
+            <label for="receivedEUR">Přijato €:</label>
+            <input type="number" id="receivedEUR">
+            <label for="eurSource">Původ (např. dary, výměna):</label>
+            <input type="text" id="eurSource">
+            <label for="expenses">Platby (např. nákupy):</label>
+            <input type="text" id="expenses">
+            <button type="submit">Přidat záznam</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Přijato Kč</th>
+                    <th>Původ Kč</th>
+                    <th>Přijato €</th>
+                    <th>Původ €</th>
+                    <th>Platby</th>
+                </tr>
+            </thead>
+            <tbody id="summaryTableBody"></tbody>
+        </table>
     </section>
 </main>
 <script src="scripts/app.js"></script>
