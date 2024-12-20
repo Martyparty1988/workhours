@@ -27,6 +27,19 @@ document.getElementById('themeToggle').addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
+// Screenshot functionality
+document.getElementById('saveScreenshot').addEventListener('click', () => {
+    const target = document.getElementById('screenshotTarget');
+    html2canvas(target).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'zaznamy.png';
+        link.href = canvas.toDataURL();
+        link.click();
+    }).catch(error => {
+        console.error("Error generating screenshot:", error);
+    });
+});
+
 // Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
     renderEntries(entries);
